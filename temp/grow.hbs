@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <title>Grow Your Business</title>
+    <link rel="stylesheet" href="/grow.css">
+    <link rel="shortcut icon" href="../buy now page/Product/favicon.png" type="image/x-icon">
+</head>
+<body>
+    <div id="notification" class="notification" style="display: none;"></div>
+    <div class="main-container">
+        <div class="head">
+            <header>
+                <img src="/logo.png" class="logo" onclick="window.location.href='/'">
+                <div id="grp">
+                    <ul id="nav">
+                        <li><a href="/Cart" class="bx bx-cart-alt"></a></li>
+                        <li class="user-menu">
+                            <a href="#" class="bx bx-user" id="userIcon"></a>
+                            <div class="dropdown-menu">
+                                {{#if user}}
+                                    <a href="/user">Profile</a>
+                                    <a href="/logout" id="logout-btn">Logout</a>
+                                {{else}}
+                                    <a href="/login">
+                                        <i class="bx bx-log-in"></i> Login
+                                    </a>
+                                    <a href="/regi">
+                                        <i class="bx bx-user-plus"></i> Register
+                                    </a>
+                                {{/if}}
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </header>
+        </div>
+
+        <h1 class="page-title">Grow Your Business</h1>
+
+        <!-- The Lean Startup -->
+        <div class="product-one">
+            <div class="Circle"></div>
+            <img src="/BB book.jpeg" alt="Business Book">
+            <div class="product-Description">
+                <h2 class="product-name">The Lean Startup</h2>
+                <p>Learn how to build a successful startup with this essential guide. Master the art of building a sustainable business through validated learning, experimentation, and iterative product releases.</p>
+            </div>
+            <div class="product-Price">
+                <h2>Price: $29.99</h2>
+                <button class="btn" onclick="addToCart(this, this.closest('.product-one').querySelector('.product-name').innerText)">
+                    <i class="fas fa-shopping-cart"></i>
+                    Add to Cart
+                </button>
+            </div>
+        </div>
+
+        <!-- Digital Marketing Masterclass -->
+        <div class="product-two">
+            <div class="Circle-two"></div>
+            <img src="/DM masterclass.jpeg" alt="Digital Marketing">
+            <div class="product-Description">
+                <h2 class="product-name">Digital Marketing Masterclass</h2>
+                <p>Master digital marketing strategies to grow your business. Learn comprehensive techniques in SEO, social media marketing, content creation, and paid advertising to reach your target audience effectively.</p>
+            </div>
+            <div class="product-Price">
+                <h2>Price: $49.99</h2>
+                <button class="btn" onclick="addToCart(this, this.closest('.product-two').querySelector('.product-name').innerText)">
+                    <i class="fas fa-shopping-cart"></i>
+                    Add to Cart
+                </button>
+            </div>
+        </div>
+
+        <!-- Daily Productivity Planner -->
+        <div class="product-one">
+            <div class="Circle"></div>
+            <img src="/Daily productive.webp" alt="Productivity Planner">
+            <div class="product-Description">
+                <h2 class="product-name">Daily Productivity Planner</h2>
+                <p>Stay organized and boost your productivity with this planner.</p>
+            </div>
+            <div class="product-Price">
+                <h2>Price: $19.99</h2>
+                <button class="btn" onclick="addToCart(this, 'Daily Productivity Planner')">
+                    <i class="fas fa-shopping-cart"></i>
+                    Add to Cart
+                </button>
+            </div>
+        </div>
+
+        <!-- 1-on-1 Business Coaching -->
+        <div class="product-two">
+            <div class="Circle-two"></div>
+            <img src="/1To1.webp" alt="Business Coaching">
+            <div class="product-Description">
+                <h2 class="product-name">1-on-1 Business Coaching</h2>
+                <p>Get personalized coaching to help you grow your business.</p>
+            </div>
+            <div class="product-Price">
+                <h2>Price: $199.99</h2>
+                <button class="btn" onclick="addToCart(this, '1-on-1 Business Coaching')">
+                    <i class="fas fa-shopping-cart"></i>
+                    Add to Cart
+                </button>
+            </div>
+        </div>
+
+        <!-- Startup Networking Event -->
+        <div class="product-one">
+            <div class="Circle"></div>
+            <img src="/Networking.jpeg" alt="Networking Event">
+            <div class="product-Description">
+                <h2 class="product-name">Startup Networking Event</h2>
+                <p>Connect with other entrepreneurs and grow your network.</p>
+            </div>
+            <div class="product-Price">
+                <h2>Price: $39.99</h2>
+                <button class="btn" onclick="addToCart(this, 'Startup Networking Event')">
+                    <i class="fas fa-shopping-cart"></i>
+                    Add to Cart
+                </button>
+            </div>
+        </div>
+
+        <!-- Personal Development Course -->
+        <div class="product-two">
+            <div class="Circle-two"></div>
+            <img src="/Personal.webp" alt="Personal Development Course">
+            <div class="product-Description">
+                <h2 class="product-name">Personal Development Course</h2>
+                <p>Enhance your skills and mindset for personal and professional growth.</p>
+            </div>
+            <div class="product-Price">
+                <h2>Price: $59.99</h2>
+                <button class="btn" onclick="addToCart(this, 'Personal Development Course')">
+                    <i class="fas fa-shopping-cart"></i>
+                    Add to Cart
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="/grow.js"></script>
+    <script>
+        // Handle user menu dropdown and logout confirmation
+        document.getElementById('userIcon').addEventListener('click', function(e) {
+            e.preventDefault();
+            const dropdownMenu = this.nextElementSibling;
+            dropdownMenu.style.display = dropdownMenu.style.display === 'block' ? 'none' : 'block';
+        });
+
+        document.addEventListener('click', function(e) {
+            if (!e.target.matches('#userIcon')) {
+                const dropdowns = document.getElementsByClassName('dropdown-menu');
+                for (const dropdown of dropdowns) {
+                    dropdown.style.display = 'none';
+                }
+            }
+        });
+
+        document.getElementById('logout-btn')?.addEventListener('click', function(e) {
+            e.preventDefault();
+            if (confirm('Are you sure you want to logout?')) {
+                window.location.href = '/logout';
+            }
+        });
+    </script>
+</body>
+</html>

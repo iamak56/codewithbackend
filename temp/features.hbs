@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/features.css">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <link rel="shortcut icon" href="/img/favicon.png" type="image/x-icon">
+    <title>Features - Cyberpunk</title>
+</head>
+<body>
+    {{#if successMessage}}
+    <div id="popup" class="popup">
+        <div class="popup-content">
+            <p>{{successMessage}}</p>
+        </div>
+    </div>
+    {{/if}}
+
+    <header>
+        <a href="/home">
+            <img src="/logo.png" alt="Cyberpunk Logo">
+        </a>
+    </header>
+
+    <div class="features-container">
+        <h1>Our Features</h1>
+        
+        <div class="feature-grid">
+            <div class="feature-card software">
+                <i class='bx bx-code-alt'></i>
+                <h2>Software Solutions</h2>
+                <p>Professional software tools for creators and developers</p>
+                <ul>
+                    <li>Adobe Creative Suite</li>
+                    <li>Development Tools</li>
+                    <li>Professional Editing Software</li>
+                    <li>Cloud Solutions</li>
+                </ul>
+            </div>
+
+            <div class="feature-card games">
+                <i class='bx bx-game'></i>
+                <h2>Gaming</h2>
+                <p>Latest games and gaming accessories</p>
+                <ul>
+                    <li>AAA Titles</li>
+                    <li>Indie Games</li>
+                    <li>Gaming Hardware</li>
+                    <li>Virtual Reality</li>
+                </ul>
+            </div>
+
+            <div class="feature-card grow">
+                <i class='bx bx-line-chart'></i>
+                <h2>Business Growth</h2>
+                <p>Tools to scale your business</p>
+                <ul>
+                    <li>Analytics Tools</li>
+                    <li>Marketing Software</li>
+                    <li>CRM Solutions</li>
+                    <li>Business Intelligence</li>
+                </ul>
+            </div>
+
+            <div class="feature-card support">
+                <i class='bx bx-support'></i>
+                <h2>24/7 Support</h2>
+                <p>Round-the-clock customer service</p>
+                <ul>
+                    <li>Live Chat Support</li>
+                    <li>Technical Assistance</li>
+                    <li>Product Guidance</li>
+                    <li>Update Support</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div id="row">
+            <div class="col">
+                <a href="/home">
+                    <img src="/logo.png" id="footerlogo" alt="Cyberpunk Logo">
+                </a>
+                <p>Your trusted source for professional software solutions, gaming experiences, and growth tools.</p>
+            </div>
+            <div class="col">
+                <i class="bx bxs-contact"></i>
+                <p id="emailid">cyberpunksof@outlook.com</p>
+                <i class="bx bxl-whatsapp-square"></i>
+                <h4>+91 - 9737######</h4>
+            </div>
+            <div class="col">
+                <i class="bx bx-link"></i>
+                <ul>
+                    <li><a href="/home">HOME</a></li>
+                    <li><a href="/services">SERVICES</a></li>
+                    <li><a href="/features">FEATURES</a></li>
+                    <li><a href="/aboutus">ABOUT US</a></li>
+                </ul>
+            </div>
+            <div class="col">
+                <i class="bx bxs-news">newsletter</i>
+                <form>
+                    <i class="bx bxs-envelope"></i>
+                    <input type="email" placeholder="Enter email" required>
+                    <button class="bx bx-send"></button>
+                </form>
+                <div id="soicon">
+                    <i class="bx bxl-facebook"></i>
+                    <i class="bx bxl-twitter"></i>
+                    <i class="bx bxl-instagram"></i>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/cyberpunk.js"></script>
+</body>
+</html>

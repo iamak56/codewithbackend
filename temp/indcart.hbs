@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <title>Industry Store</title>
+    <link rel="stylesheet" href="/industry.css">
+    {{!-- <link rel="shortcut icon" href="../buy now page/Product/favicon.png" type="image/x-icon"> --}}
+</head>
+<body>
+    <div class="main-container" action="/indcart" method="post">
+       <div class="head">
+    <header>
+        <img src="/logo.png" class="logo" onclick="window.location.href='/'">
+        <div id="grp">
+            <ul id="nav">
+                <li><a href="/Cart" class="bx bx-cart-alt"></a></li>
+                <li class="user-menu">
+                    <a href="#" class="bx bx-user" id="userIcon"></a>
+                    <div class="dropdown-menu">
+                        {{#if user}}
+                            <a href="/user">Profile</a>
+                            <a href="/logout" id="logout-btn">Logout</a>
+                        {{else}}
+                            <a href="/login">
+                                <i class="bx bx-log-in"></i> Login
+                            </a>
+                            <a href="/regi">
+                                <i class="bx bx-user-plus"></i> Register
+                            </a>
+                        {{/if}}
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </header>
+</div>
+        </div>
+
+        <!-- Adobe Premiere Pro -->
+        <div class="product-one">
+            <div class="Circle"></div>
+            <img src="/premiere-pro.svg" alt="Adobe Premiere Pro">
+            <div class="product-Description">
+                <h2 class="product-name">Adobe Premiere Pro</h2>
+                <p>Professional video editing software for film, TV, and the web.</p>
+            </div>
+            <div class="product-Price">
+                <h2>Price: $239.88</h2>
+                <button class="btn" onclick="addToCart(this, this.closest('.product-one').querySelector('.product-name').innerText)">
+                    <i class="fas fa-shopping-cart"></i>
+                    Add to Cart
+                </button>
+            </div>
+        </div>
+
+        <!-- Adobe Photoshop -->
+        <div class="product-two">
+            <div class="Circle-two"></div>
+            <img src="/photoshop.svg" alt="Adobe Photoshop">
+            <div class="product-Description">
+                <h2 class="product-name">Adobe Photoshop</h2>
+                <p>The world's best imaging and graphic design software.</p>
+            </div>
+            <div class="product-Price">
+                <h2>Price: $239.88</h2>
+                <button class="btn" onclick="addToCart(this, this.closest('.product-two').querySelector('.product-name').innerText)">
+                    <i class="fas fa-shopping-cart"></i>
+                    Add to Cart
+                </button>
+            </div>
+        </div>
+
+        <!-- QuickBooks -->
+        <div class="product-one">
+            <div class="Circle"></div>
+            <img src="/Online Book.svg" alt="QuickBooks">
+            <div class="product-Description">
+                <h2 class="product-name">QuickBooks Online</h2>
+                <p>Accounting software to manage your business finances.</p>
+            </div>
+            <div class="product-Price">
+                <h2>Price: $25.00</h2>
+                <button class="btn" onclick="addToCart(this, this.closest('.product-one').querySelector('.product-name').innerText)">
+                    <i class="fas fa-shopping-cart"></i>
+                    Add to Cart
+                </button>
+            </div>
+        </div>
+
+        <!-- Blender -->
+        <div class="product-two">
+            <div class="Circle-two"></div>
+            <img src="/blender.png" alt="Blender">
+            <div class="product-Description">
+                <h2 class="product-name">Blender</h2>
+                <p>Open-source 3D modeling, animation, and rendering software.</p>
+            </div>
+            <div class="product-Price">
+                <h2>Price: $155.00</h2>
+                <button class="btn" onclick="addToCart(this, this.closest('.product-two').querySelector('.product-name').innerText)">
+                    <i class="fas fa-shopping-cart"></i>
+                    Add to Cart
+                </button>
+            </div>
+        </div>
+
+        <!-- Autodesk Maya -->
+        <div class="product-one">
+            <div class="Circle"></div>
+            <img src="/maya.webp" alt="Autodesk Maya">
+            <div class="product-Description">
+                <h2 class="product-name">Autodesk Maya</h2>
+                <p>3D modeling and animation software for film and games.</p>
+            </div>
+            <div class="product-Price">
+                <h2>Price: $1,545.00</h2>
+                <button class="btn" onclick="addToCart(this, this.closest('.product-one').querySelector('.product-name').innerText)">
+                    <i class="fas fa-shopping-cart"></i>
+                    Add to Cart
+                </button>
+            </div>
+        </div>
+
+        <!-- Cinema 4D -->
+        <div class="product-two">
+            <div class="Circle-two"></div>
+            <img src="/cinema4d.png" alt="Cinema 4D">
+            <div class="product-Description">
+                <h2 class="product-name">Maxon Cinema 4D</h2>
+                <p>Professional 3D modeling, animation, and rendering software.</p>
+            </div>
+            <div class="product-Price">
+                <h2>Price: $999.00</h2>
+                <button class="btn" onclick="addToCart(this, this.closest('.product-two').querySelector('.product-name').innerText)">
+                    <i class="fas fa-shopping-cart"></i>
+                    Add to Cart
+                </button>
+            </div>
+        </div>
+
+    </div>
+<script src="/game.js"></script>
+
+<script>
+
+    {{#if successMessage}}
+    setTimeout(() => {
+        const popup = document.querySelector('.popup');
+        if (popup) {
+            popup.style.opacity = '0';
+            setTimeout(() => popup.remove(), 500);
+        }
+    }, 3000);
+    {{/if}}
+
+    // Toggle user menu dropdown
+    document.getElementById('userIcon').addEventListener('click', function(e) {
+        e.preventDefault();
+        const dropdownMenu = this.nextElementSibling;
+        dropdownMenu.style.display = dropdownMenu.style.display === 'block' ? 'none' : 'block';
+    });
+
+    // Close dropdown when clicking outside
+    document.addEventListener('click', function(e) {
+        if (!e.target.matches('#userIcon')) {
+            const dropdowns = document.getElementsByClassName('dropdown-menu');
+            for (const dropdown of dropdowns) {
+                dropdown.style.display = 'none';
+            }
+        }
+    });
+
+    // Confirm logout
+    document.getElementById('logout-btn')?.addEventListener('click', function(e) {
+        e.preventDefault();
+        if (confirm('Are you sure you want to logout?')) {
+            window.location.href = '/logout';
+        }
+    });
+</script>
+</body>
+</html>

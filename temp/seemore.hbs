@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/seemore.css">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <title>See More Products</title>
+</head>
+<body>
+    <header>
+        <a href="/home"><img src="/logo.png"></a>
+        <div id="grp">
+            <ul id="nav">
+                <li><a href="/Cart" class="bx bx-cart-alt"></a></li>
+                <li class="user-menu">
+                    <a href="#" class="bx bx-user" id="userIcon"></a>
+                    <div class="dropdown-menu">
+                        {{#if user}}
+                            <a href="/user">Profile</a>
+                            <a href="/logout" id="logout-btn">Logout</a>
+                        {{else}}
+                            <a href="/login">
+                                <i class="bx bx-log-in"></i> Login
+                            </a>
+                            <a href="/regi">
+                                <i class="bx bx-user-plus"></i> Register
+                            </a>
+                        {{/if}}
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </header>
+
+    <div class="products-container">
+        <div class="product-details">
+            {{#if selectedProduct}}
+                <div class="product-showcase">
+                    <div class="product-image">
+                        <img src="{{selectedProduct.image}}" alt="{{selectedProduct.name}}">
+                    </div>
+                    <div class="product-info">
+                        <h1>{{selectedProduct.name}}</h1>
+                        <p class="price">{{selectedProduct.price}}</p>
+                        <div class="description">
+                            <h3>Description</h3>
+                            <p>{{selectedProduct.description}}</p>
+                        </div>
+                        <div class="features">
+                            <h3>Key Features</h3>
+                            <ul>
+                                {{#each selectedProduct.features}}
+                                    <li>{{this}}</li>
+                                {{/each}}
+                            </ul>
+                        </div>
+                        <button class="add-to-cart" onclick="addToCart('{{selectedProduct.id}}')">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+            {{else}}
+                <div class="product-grid">
+                    <div class="product-card">
+                        <img src="/Ae.jpg" alt="After Effects">
+                        <div class="product-info">
+                            <h3>After Effects</h3>
+                            <p class="price">$100.00</p>
+                            <p class="description">Professional video editing and visual effects software.</p>
+                            <button class="add-to-cart">Add to Cart</button>
+                        </div>
+                    </div>
+
+                    <div class="product-card">
+                        <img src="/Pr.jpg" alt="Premiere Pro">
+                        <div class="product-info">
+                            <h3>Premiere Pro</h3>
+                            <p class="price">$130.00</p>
+                            <p class="description">Professional video editing software.</p>
+                            <button class="add-to-cart">Add to Cart</button>
+                        </div>
+                    </div>
+
+                    <div class="product-card">
+                        <img src="/Ps.jpg" alt="Photoshop">
+                        <div class="product-info">
+                            <h3>Photoshop</h3>
+                            <p class="price">$400.99</p>
+                            <p class="description">Professional photo editing software.</p>
+                            <button class="add-to-cart">Add to Cart</button>
+                        </div>
+                    </div>
+
+                    <div class="product-card">
+                        <img src="/Ai.jpg" alt="Illustrator">
+                        <div class="product-info">
+                            <h3>Illustrator</h3>
+                            <p class="price">$239.88</p>
+                            <p class="description">Vector graphics design software.</p>
+                            <button class="add-to-cart">Add to Cart</button>
+                        </div>
+                    </div>
+
+                    <div class="product-card">
+                        <img src="/firefly.jpg" alt="Firefly">
+                        <div class="product-info">
+                            <h3>Adobe Firefly</h3>
+                            <p class="price">$199.99</p>
+                            <p class="description">AI-powered creative tools.</p>
+                            <button class="add-to-cart">Add to Cart</button>
+                        </div>
+                    </div>
+
+                    <div class="product-card">
+                        <img src="/Lr.jpg" alt="Lightroom">
+                        <div class="product-info">
+                            <h3>Lightroom</h3>
+                            <p class="price">$119.99</p>
+                            <p class="description">Professional photo organization and editing.</p>
+                            <button class="add-to-cart">Add to Cart</button>
+                        </div>
+                    </div>
+
+                    <div class="product-card">
+                        <img src="/xd.jpg" alt="Adobe XD">
+                        <div class="product-info">
+                            <h3>Adobe XD</h3>
+                            <p class="price">$149.99</p>
+                            <p class="description">UI/UX design and prototyping tool.</p>
+                            <button class="add-to-cart">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            {{/if}}
+        </div>
+    </div>
+
+    <script src="/seemore.js"></script>
+</body>
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/product.css">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <title>{{product.name}} - Cyberpunk</title>
+</head>
+<body>
+    <header>
+        <a href="/home"><img src="/logo.png" alt="Cyberpunk Logo"></a>
+        <nav>
+            <ul>
+                <li><a href="/Cart" class="bx bx-cart-alt"></a></li>
+                <li class="user-menu">
+                    <a href="#" class="bx bx-user" id="userIcon"></a>
+                    <div class="dropdown-menu">
+                        {{#if user}}
+                            <a href="/user">Profile</a>
+                            <a href="/logout" id="logout-btn">Logout</a>
+                        {{else}}
+                            <a href="/login">
+                                <i class="bx bx-log-in"></i> Login
+                            </a>
+                            <a href="/regi">
+                                <i class="bx bx-user-plus"></i> Register
+                            </a>
+                        {{/if}}
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="product-container">
+        <div class="product-gallery">
+            <div class="main-image">
+                <img src="{{product.image}}" alt="{{product.name}}">
+            </div>
+        </div>
+
+        <div class="product-info">
+            <div class="product-header">
+                <h1>{{product.name}}</h1>
+                <div class="product-meta">
+                    <span class="category">{{product.category}}</span>
+                    <div class="rating">
+                        {{#times product.rating}}
+                            <i class="bx bxs-star"></i>
+                        {{/times}}
+                    </div>
+                </div>
+            </div>
+
+            <div class="price-section">
+                <div class="price">{{product.price}}</div>
+                {{#if product.oldPrice}}
+                    <div class="old-price">{{product.oldPrice}}</div>
+                    <div class="discount">-{{product.discount}}%</div>
+                {{/if}}
+            </div>
+
+            <div class="description">
+                <h2>Description</h2>
+                <p>{{product.description}}</p>
+            </div>
+
+            <div class="features">
+                <h2>Key Features</h2>
+                <ul>
+                    {{#each product.features}}
+                        <li><i class="bx bx-check"></i> {{this}}</li>
+                    {{/each}}
+                </ul>
+            </div>
+
+            <div class="action-buttons">
+                <button class="btn primary" onclick="addToCart(this, '{{product._id}}', '{{product.name}}', '{{product.price}}', '{{product.image}}')">
+                    <i class="bx bx-cart-add"></i>
+                    Add to Cart
+                </button>
+                <button class="btn secondary" onclick="buyNow('{{product.name}}')">
+                    <i class="bx bx-purchase-tag"></i>
+                    Buy Now
+                </button>
+            </div>
+        </div>
+    </main>
+
+    <!-- Add popup notification -->
+    <div id="notification" class="notification" style="display: none;">
+        <i class="bx bx-check-circle"></i>
+        <span id="notification-message"></span>
+    </div>
+
+    <script src="/product.js"></script>
+</body>
+</html> 

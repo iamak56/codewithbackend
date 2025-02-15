@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/login.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <video src="/ghost-modern-warfare-from-call-of-duty.1920x1080.mp4" autoplay loop muted></video>
+    <div class="wrapper">
+        <form class="loginbox" action="/login" method="post">
+            <div class="loginheader">
+                <span>Log in</span>
+            </div>
+            {{#if error}}
+            <div class="error-message" style="color: red; text-align: center; margin-bottom: 10px;">
+                {{error}}
+            </div>
+            {{/if}}
+            <div class="inputbox">
+                <input type="text" id="user" name="email" class="input-fi" required>
+                <label for="user" class="label">Email</label>
+                <i class="bx bx-envelope icon"></i>
+            </div>
+            <div class="inputbox">
+                <input type="password" id="pass"  name="password"class="input-fi" required>
+                <label for="pass" class="label">password</label>
+                <i class="bx bx-lock-alt icon" onclick="showpass()"></i>
+            </div>
+            <div class="remember-for">
+                <div class="rememberme">
+                    <input type="checkbox" id="remember">
+                    <label for="remember" style="color: white;">remember me</label>
+                </div>
+                <div class="forgot">
+                    <a href="/forgot">Forgot Password ?</a>
+                </div>
+            </div>
+            <div class="inputbox">
+                <button class="inputsubmit">Log in</button>
+            </div>
+            
+            <div class="register">
+                <span style="color: white;">Don't have an account ? <a href="/regi">Register</a></span>
+            </div>
+        </form>
+    </div>
+    <script>
+        function showpass() {
+            var x = document.getElementById("pass");
+            if (x.type === "password") {
+                x.type = "text";
+            }
+            else {
+                x.type = "password";
+            }
+        }
+    </script>
+</body>
+
+</html>

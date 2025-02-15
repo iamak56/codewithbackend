@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/home.css">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <link rel="shortcut icon" href="./img and video/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Cyberpunk</title>
+</head>
+
+<body>
+    {{#if successMessage}}
+    <div id="popup" class="popup">
+        <div class="popup-content">
+            <p>{{successMessage}}</p>
+        </div>
+    </div>
+    {{/if}}
+
+    <div class="main-box" action="/home" method="post">
+        <div class="first-page">
+            <div class="first-bg">
+                <video src="/cyber.mp4" loop autoplay muted height="700vh"></video>
+            </div>
+            <header>
+                <img src="/logo.png">
+                <div id="grp">
+                    <ul id="nav">
+                        <li><a href="/Cart" class="bx bx-cart-alt"></a></li>
+                        <li class="user-menu">
+                            <a href="#" class="bx bx-user" id="userIcon"></a>
+                            <div class="dropdown-menu">
+                                {{#if user}}
+                                    <a href="/user">Profile</a>
+                                    <a href="/logout" id="logout-btn">Logout</a>
+                                {{else}}
+                                    <a href="/login">
+                                        <i class="bx bx-log-in"></i> Login
+                                    </a>
+                                    <a href="/regi">
+                                        <i class="bx bx-user-plus"></i> Register
+                                    </a>
+                                {{/if}}
+                            </div>
+                        </li>
+                    </ul>
+                    <div id="srch">
+                        <span class="icon">
+                            <i class="bx bx-search-alt srchbtn" style="color: white;"></i>
+                        </span>
+                    </div>
+                </div>
+                <div id="srchbx">
+                    <input type="text" id="searchInput" placeholder="search..." class="srchbx">
+                    <div id="searchResults" class="search-results"></div>
+                </div>
+            </header>
+        </div>
+        <div class="first-button">
+            <a href="/login">
+            <button id="hbtn">
+                <span id="btn_con">Log in</span>
+            </button>
+        </a>
+            <div class="button-secondbox">
+               <a href="/buynow"> <button id="hbtn">
+                    <span id="btn_con">Buy Now</span>
+                </button>
+            </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- secondpage -->
+
+    <!-- carousel -->
+    <div class="carousel">
+        <!-- list item -->
+        <div class="list">
+            <div class="item">
+                <img src="/Ae.jpg">
+                <div class="content">
+                    <div class="author">ADOBE</div>
+                    <div class="title">After Effect</div>
+                    <div class="topic">VFX</div>
+                    <div class="des">
+                        After Effect provides a short video editing tecnology where you can Add visual effects , Add 3D
+                        models and many more.
+                    </div>
+                   <div class="buttons">
+            <input type="button" value="see more" onclick="window.location.href='/seemore?product=after-effects'">
+        </div>
+                </div>
+            </div>
+            <div class="item">
+                <img src="./Pr.jpg">
+                <div class="content">
+                    <div class="author">ADOBE</div>
+                    <div class="title">Primume Pro</div>
+                    <div class="topic">Movie Editing</div>
+                    <div class="des">
+                        Adobe Premiere Pro is the leading editing software for creating any kind of video. Add transitions and effects, finesse colour, mix audio, create animated titles and get all the tools to tell your story.
+                    </div>
+                     <div class="buttons">
+            <input type="button" value="see more" onclick="window.location.href='/seemore?product=premiere-pro'">
+        </div>
+                </div>
+            </div>
+            <div class="item">
+                <img src="/Ps.jpg">
+                <div class="content">
+                    <div class="author">ADOBE</div>
+                    <div class="title">Photoshop</div>
+                    <div class="topic">Photo Editing</div>
+                    <div class="des">
+                        Start with Photoshop. Amazing will follow.
+                        Fire up your imagination with the most powerful Photoshop yet. Remove distractions in a click. Get amazing photorealistic results with Generative Fill. And add more picture to your picture with Generative Expand.
+                    </div>
+                     <div class="buttons">
+            <input type="button" value="see more" onclick="window.location.href='/seemore?product=photoshop'">
+        </div>
+                </div>
+            </div>
+            <div class="item">
+                <img src="/Ai.jpg">
+                <div class="content">
+                    <div class="author">ADOBE</div>
+                    <div class="title">Adobe Illustrator</div>
+                    <div class="topic">Vector Art</div>
+                    <div class="des">
+                        Create at the speed of now.
+                        With powerful new features in Illustrator, you can create graphics that match your style, explore dozens of options and finish designs faster.
+                    </div>
+                    <div class="buttons">
+            <input type="button" value="see more" onclick="window.location.href='/seemore?product=illustrator'">
+        </div>
+                </div>
+            </div>
+            <div class="item">
+                <img src="/firefly.jpg">
+                <div class="content">
+                    <div class="author">ADOBE</div>
+                    <div class="title">Adobe Firefly</div>
+                    <div class="topic">Artificial intelligent</div>
+                    <div class="des">
+                        Create with Adobe Firefly generative AI.
+                        Firefly models and services power generative AI features in Adobe creative apps. Learn about the latest features in Photoshop, Premiere Pro (beta) and the Firefly web app.
+                    </div>
+                     <div class="buttons">
+            <input type="button" value="see more" onclick="window.location.href='/seemore?product=firefly'">
+        </div>
+                </div>
+            </div>
+            <div class="item">
+                <img src="/Lr.jpg">
+                <div class="content">
+                    <div class="author">ADOBE</div>
+                    <div class="title">Lightroom</div>
+                    <div class="topic">color Art</div>
+                    <div class="des">
+                        Meet a smarter mobile photo editor.
+                        Make your photos look better than ever with powerful new features in Lightroom. Quick Actions instantly give you suggestions tailored to your photo so you can get the look you want. And with Generative Remove, it's easy to clean up anything in a touch.
+                    </div>
+                     <div class="buttons">
+            <input type="button" value="see more" onclick="window.location.href='/seemore?product=lightroom'">
+        </div>
+                </div>
+            </div>
+            <div class="item">
+                <img src="/xd.jpg">
+                <div class="content">
+                    <div class="author">ADOBE</div>
+                    <div class="title">Adobe XD</div>
+                    <div class="topic">Vector design</div>
+                    <div class="des">
+                        Get started using Adobe XD, the powerful platform for creating user experiences — all at the speed of thought. In this introductory tutorial with Dani Beaumont, you'll take a look at building and previewing your first project with XD in five easy steps.
+                    </div>
+                     <div class="buttons">
+            <input type="button" value="see more" onclick="window.location.href='/seemore?product=xd'">
+        </div>
+                </div>
+            </div>
+        </div>
+        <!-- list thumnail -->
+        <div class="thumbnail">
+            <div class="item">
+                <img src="/Ae.jpg">
+                <div class="content">
+                    <div class="title">
+                        After Effect
+                    </div>
+                    <div class="description">
+                        VFX Art Software
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <img src="/Pr.jpg">
+                <div class="content">
+                    <div class="title">
+                        Primume Pro
+                    </div>
+                    <div class="description">
+                        Movie Art software
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <img src="/Ps.jpg">
+                <div class="content">
+                    <div class="title">
+                        Photoshop
+                    </div>
+                    <div class="description">
+                        Photo Art Software
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <img src="/Ai.jpg">
+                <div class="content">
+                    <div class="title">
+                        Adobe Illustrator
+                    </div>
+                    <div class="description">
+                        Vector Art Software
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <img src="/firefly.jpg">
+                <div class="content">
+                    <div class="title">
+                        firefly
+                    </div>
+                    <div class="description">
+                        Artificial intelligent
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <img src="/Lr.jpg">
+                <div class="content">
+                    <div class="title">
+                        Lightroom
+                    </div>
+                    <div class="description">
+                        color Software
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <img src="/xd.jpg">
+                <div class="content">
+                    <div class="title">
+                        Adobe Xd
+                    </div>
+                    <div class="description">
+                        Vector design Software
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- next prev -->
+
+        <div class="arrows">
+            <button id="prev">
+                <
+            </button>
+                    <button id="next">></button>
+        </div>
+        <!-- time running -->
+        <div class="time"></div>
+    </div>
+
+    <!-- thirdpage -->
+    <div class="third-page">
+        <div class="third-mainContaner">
+            <div class="third-Container">
+                <div class="third-img" onclick="window.location.href='/game'" style="cursor: pointer;">
+                    <img src="/one page.png" alt="">
+                </div>
+                <div class="third-info">
+                    <h2>GAME</h2>
+                    <p>Create and grow amazing games across 20+ platforms and billions of devices with our end-to-end
+                        tools and services for creation,launch, and beyond.</p>
+                </div>
+                <input type="button" value="LEARN MORE" onclick="window.location.href='/game'">
+            </div>
+            <div class="third-Container">
+                <div class="third-img"  onclick="window.location.href='/indcart'" style="cursor: pointer;">
+                    <img src="/one page 2.png" alt="">
+                </div>
+                <div class="third-info">
+                    <h2>Industry</h2>
+                    <p>Get the creation tools and enterprise support you need to transform your CAD and 3D data into
+                        immersive apps and experiences for any device, anywhere</p>
+                </div>
+               <input type="button" value="LEARN MORE" onclick="window.location.href='/indcart'" style="cursor: pointer;"> 
+            </div>
+            <div class="third-Container" >
+                <div class="third-img" onclick="window.location.href='/grow'" style="cursor: pointer;">
+                    <img src="/one page 3.png " alt="">
+                </div>
+                <div class="third-info">
+                    <h2>Grow</h2>
+                    <p>Grow your app from day one with Unity's complete set of powerful tools, services, and expertise
+                        to turn it into a successful business</p>
+                </div>
+                <input type="button" value="LEARN MORE" onclick="window.location.href='/grow'">
+            </div>
+        </div>
+    </div>
+
+    <!-- fourthpage -->
+
+    <div class="fourpg"></div>
+    <footer>
+        <div id="row">
+            <div class="col">
+                <img src="/logo.png" id="footerlogo">
+                <p>This e-commerce platform specializes in selling industry-specific software. It offers a curated selection, personalized recommendations, and resources to help businesses find, evaluate, and purchase the right software solutions to grow their operations.</p>
+            </div>
+            <div class="col">
+                <i class="bx bxs-contact"></i>
+                <p id="emailid">cyberpunksof@outlook.com</p>
+                <i class="bx bxl-whatsapp-square"></i>
+                <h4>+91 - 9737######</h4>
+            </div>
+            <div class="col">
+                <i class="bx bx-link"></i>
+                <ul>
+                    <li><a href="/home">HOME</a></li>
+                    <li><a href="/services">SERVICES</a></li>
+                    <li><a href="/features">FEATURES</a></li>
+                    <li><a href="/aboutus">ABOUT US</a></li>
+                </ul>
+            </div>
+            <div class="col">
+                <i class="bx bxs-news">newslatter</i>
+                <form>
+                    <i class="bx bxs-envelope"></i>
+                    <input type="email" placeholder="Enter email" required>
+                    <button class="bx bx-send"></button>
+                </form>
+                <div id="soicon">
+                    <i class="bx bxl-facebook"></i>
+                    <i class="bx bxl-twitter"></i>
+                    <i class="bx bxl-instagram"></i>
+                </div>
+            </div>
+        </div>
+    </footer>
+    </div>
+<script src="/cyberpunk.js"></script>
+<script>
+    // Remove popup after 3 seconds
+    const popup = document.getElementById('popup');
+    if (popup) {
+        setTimeout(() => {
+            popup.remove();
+        }, 3000);
+    }
+
+    // Add logout confirmation
+    document.getElementById('logout-button')?.addEventListener('click', function(e) {
+        e.preventDefault();
+        if (confirm('Are you sure you want to logout?')) {
+            window.location.href = '/logout';
+        }
+    });
+
+    // Add click handler for user icon dropdown
+    document.getElementById('userIcon').addEventListener('click', function(e) {
+        e.preventDefault();
+        const dropdownMenu = this.nextElementSibling;
+        dropdownMenu.style.display = dropdownMenu.style.display === 'block' ? 'none' : 'block';
+    });
+
+    // Close dropdown when clicking outside
+    document.addEventListener('click', function(e) {
+        if (!e.target.matches('#userIcon')) {
+            const dropdowns = document.getElementsByClassName('dropdown-menu');
+            for (const dropdown of dropdowns) {
+                dropdown.style.display = 'none';
+            }
+        }
+    });
+
+    const searchInput = document.getElementById('searchInput');
+    const searchResults = document.getElementById('searchResults');
+
+    // Combined products data from all pages
+    const products = [
+        // Buynow page products
+        { name: 'After Effect', price: '$100.00', image: '/After-effect.webp', category: 'Software' },
+        { name: 'Premiere Pro', price: '$130.00', image: '/Premiere Pro.svg', category: 'Software' },
+        { name: 'Photoshop', price: '$400.99', image: '/Photoshop.svg', category: 'Software' },
+        { name: 'Technotopia', price: '$50.56', image: '/technotopia.avif', category: 'Game' },
+        { name: 'Hordes of Hel', price: '$84.95', image: '/hordes-of-hel.avif', category: 'Game' },
+        { name: 'Egregore', price: '$85.32', image: '/egregore.avif', category: 'Game' },
+        
+        // Industry page products
+        { name: 'Adobe Premiere Pro', price: '$239.88', image: '/premiere-pro.svg', category: 'Industry' },
+        { name: 'Adobe Photoshop', price: '$239.88', image: '/photoshop.svg', category: 'Industry' },
+        { name: 'QuickBooks Online', price: '$25.00', image: '/Online Book.svg', category: 'Industry' },
+        { name: 'Blender', price: '$155.00', image: '/blender.png', category: 'Industry' },
+        { name: 'Autodesk Maya', price: '$1,545.00', image: '/maya.webp', category: 'Industry' },
+        { name: 'Maxon Cinema 4D', price: '$999.00', image: '/cinema4d.png', category: 'Industry' },
+
+        // Grow page products
+        { name: 'The Lean Startup', price: '$29.99', image: '/BB book.jpeg', category: 'Business' },
+        { name: 'Digital Marketing Masterclass', price: '$49.99', image: '/DM masterclass.jpeg', category: 'Business' },
+        { name: 'Daily Productivity Planner', price: '$19.99', image: '/Daily productive.webp', category: 'Business' },
+        { name: 'Personal Development Course', price: '$59.99', image: '/Personal.webp', category: 'Business' },
+        { name: 'Startup Networking Event', price: '$39.99', image: '/Networking.jpeg', category: 'Business' },
+        { name: '1-on-1 Business Coaching', price: '$199.99', image: '/1To1.webp', category: 'Business' }
+    ];
+
+    searchInput.addEventListener('input', function(e) {
+        const searchTerm = e.target.value.toLowerCase();
+        searchResults.innerHTML = '';
+        
+        if (searchTerm.length > 0) {
+            const matchingProducts = products.filter(product => 
+                product.name.toLowerCase().includes(searchTerm) ||
+                product.category.toLowerCase().includes(searchTerm)
+            );
+            
+            matchingProducts.forEach(product => {
+                const div = document.createElement('div');
+                div.className = 'search-result-item';
+                div.innerHTML = `
+                    <img src="${product.image}" alt="${product.name}">
+                    <div class="search-item-details">
+                        <span class="search-item-name">${product.name}</span>
+                        <span class="search-item-category">${product.category}</span>
+                        <span class="search-item-price">${product.price}</span>
+                    </div>
+                `;
+                div.addEventListener('click', () => {
+                    window.location.href = `/product/${encodeURIComponent(product.name)}`;
+                });
+                searchResults.appendChild(div);
+            });
+            
+            searchResults.style.display = matchingProducts.length > 0 ? 'block' : 'none';
+        } else {
+            searchResults.style.display = 'none';
+        }
+    });
+
+    // Close search results when clicking outside
+    document.addEventListener('click', function(e) {
+        if (!searchInput.contains(e.target) && !searchResults.contains(e.target)) {
+            searchResults.style.display = 'none';
+        }
+    });
+</script>
+
+<style>
+.search-results {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.9);
+    border: 1px solid #00f3ff;
+    border-radius: 4px;
+    max-height: 300px;
+    overflow-y: auto;
+    display: none;
+    z-index: 1000;
+    box-shadow: 0 0 10px rgba(0, 243, 255, 0.3);
+    backdrop-filter: blur(5px);
+}
+
+.search-result-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 16px;
+    cursor: pointer;
+    color: #fff;
+    border-bottom: 1px solid rgba(0, 243, 255, 0.2);
+    transition: all 0.3s ease;
+}
+
+.search-result-item img {
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+.search-item-details {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.search-item-name {
+    font-weight: 500;
+}
+
+.search-item-price {
+    font-size: 0.9em;
+    color: var(--accent-color);
+}
+
+.search-result-item:hover {
+    background-color: rgba(0, 243, 255, 0.1);
+    padding-left: 20px;
+}
+
+.search-result-item:hover .search-item-name {
+    color: #00f3ff;
+    text-shadow: 0 0 5px #00f3ff;
+}
+
+/* Scrollbar styling */
+.search-results::-webkit-scrollbar {
+    width: 8px;
+}
+
+.search-results::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.search-results::-webkit-scrollbar-thumb {
+    background: #00f3ff;
+    border-radius: 4px;
+}
+
+.search-results::-webkit-scrollbar-thumb:hover {
+    background: #00c4cc;
+}
+
+.search-item-category {
+    font-size: 0.8em;
+    color: #00f3ff;
+    opacity: 0.8;
+}
+
+.search-item-details {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+</style>
+</body>
+
+</html>

@@ -1,0 +1,389 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: #000;
+    color: #fff;
+}
+
+/* Header and Navigation */
+.head {
+    background-color: transparent;
+    padding: 1rem 2rem;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.logo {
+    height: 50px;
+    transition: transform 0.3s;
+}
+
+.logo:hover {
+    transform: scale(1.05);
+}
+
+#nav {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+#nav a {
+    text-decoration: none;
+    color: #fcee09;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    font-size: 30px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+#nav a:hover {
+    background-color: rgba(252, 238, 9, 0.1);
+    color: #fff;
+    text-shadow: 0 0 10px #fcee09;
+}
+
+/* Product Cards */
+.main-container {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+.product-one, .product-two {
+    display: flex;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.8);
+    border: 1px solid rgba(252, 238, 9, 0.3);
+    border-radius: 15px;
+    padding: 2rem;
+    margin: 2rem 0;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.product-one:hover, .product-two:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 20px rgba(252, 238, 9, 0.2);
+}
+
+.Circle, .Circle-two {
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    border-radius: 50%;
+    z-index: 0;
+    opacity: 0.2;
+    transition: transform 0.5s ease;
+    background: linear-gradient(45deg, #fcee09, #ff003c);
+}
+
+.Circle {
+    right: -200px;
+    top: -200px;
+}
+
+.Circle-two {
+    left: -200px;
+    bottom: -200px;
+}
+
+.product-one img, .product-two img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-right: 2rem;
+    transition: transform 0.3s ease;
+    z-index: 1;
+}
+
+.product-Description {
+    flex: 1;
+    z-index: 1;
+}
+
+.product-name {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #fcee09;
+    text-shadow: 0 0 5px rgba(252, 238, 9, 0.5);
+}
+
+.product-Description p {
+    color: #ccc;
+    line-height: 1.6;
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+}
+
+.product-Price {
+    text-align: right;
+    min-width: 200px;
+    z-index: 1;
+}
+
+.product-Price h2 {
+    color: #fcee09;
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    text-shadow: 0 0 5px rgba(252, 238, 9, 0.5);
+}
+
+/* Button and other styles remain the same as in game.css */
+.btn {
+    background: linear-gradient(45deg, #fcee09, #ff003c);
+    clip-path: polygon(92% 0, 100% 25%, 100% 100%, 8% 100%, 0% 75%, 0 0);
+    color: #fff;
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.3s ease;
+    width: 100%;
+    justify-content: center;
+}
+
+.btn:hover {
+    background: linear-gradient(45deg, #ff003c, #fcee09);
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(252, 238, 9, 0.3);
+}
+
+/* User Menu Dropdown */
+.user-menu {
+    position: relative;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 100%;
+    background: rgba(0, 0, 0, 0.85);
+    border: 1px solid rgba(252, 238, 9, 0.3);
+    border-radius: 8px;
+    padding: 0.8rem 0;
+    min-width: 150px;
+    z-index: 1000;
+    box-shadow: 0 0 15px rgba(252, 238, 9, 0.2);
+}
+
+.dropdown-menu a {
+    display: flex;
+    align-items: center;
+    padding: 0.8rem 1.2rem;
+    color: #fff;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    gap: 0.5rem;
+}
+
+.dropdown-menu a:hover {
+    background: rgba(252, 238, 9, 0.1);
+    color: #fcee09;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .product-grid {
+        grid-template-columns: 1fr;
+        padding: 1rem;
+    }
+
+    header {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    #nav {
+        gap: 1rem;
+    }
+
+    .btn {
+        padding: 0.6rem 1.2rem;
+    }
+}
+
+/* Success Message Popup */
+.notification {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: rgba(252, 238, 9, 0.9);
+    border: 1px solid #fcee09;
+    box-shadow: 0 0 15px rgba(252, 238, 9, 0.3);
+    color: #000;
+    padding: 15px;
+    border-radius: 5px;
+    z-index: 1000;
+    transition: opacity 0.5s ease;
+}
+
+/* Page Title */
+.page-title {
+    text-align: center;
+    color: #fcee09;
+    font-size: 2.5rem;
+    margin: 2rem 0;
+    text-shadow: 0 0 15px rgba(252, 238, 9, 0.5);
+}
+
+/* Add these styles to your existing CSS */
+.user-menu {
+    position: relative;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 100%;
+    background: rgba(0, 0, 0, 0.85);
+    border: 1px solid rgba(252, 238, 9, 0.3);
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(252, 238, 9, 0.2);
+    padding: 8px 0;
+    min-width: 150px;
+    z-index: 1000;
+}
+
+.dropdown-menu a {
+    display: flex;
+    align-items: center;
+    padding: 8px 16px;
+    color: #fff;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.dropdown-menu a:hover {
+    background-color: rgba(252, 238, 9, 0.1);
+    color: #fcee09;
+}
+
+.dropdown-menu i {
+    margin-right: 8px;
+    font-size: 1.2em;
+}
+
+/* Success message popup styling */
+.popup {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+    animation: slideIn 0.5s ease-out;
+}
+
+.popup-content {
+    background: #4CAF50;
+    color: white;
+    padding: 15px 25px;
+    border-radius: 5px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.main-container h1{
+    font-size: 36px;
+    text-align: center;
+    color: #2c3e50;
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: transform 0.3s ease, color 0.3s ease;
+    position: relative;
+}
+
+.main-container h1:hover {
+    color: #3498db;
+    transform: translateY(-5px);
+}
+
+.main-container h1::after {
+    content: '';
+    display: block;
+    width: 50%;
+    height: 4px;
+    background: #3498db;
+    margin: 0 auto;
+    transition: width 0.3s ease;
+}
+
+.main-container h1:hover::after {
+    width: 100%;
+}
+
+.product-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.product-card {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    margin: 1rem;
+    padding: 1rem;
+    width: 300px; /* Adjust width as needed */
+    transition: transform 0.3s;
+}
+
+.product-card:hover {
+    transform: scale(1.05); /* Scale effect on hover */
+}
+
+.product-card img {
+    width: 100%; /* Make the image take the full width of the card */
+    height: auto; /* Maintain aspect ratio */
+    max-height: 200px; /* Set a maximum height for uniformity */
+    object-fit: cover; /* Ensure the image covers the area without distortion */
+    border-radius: 10px;
+}
+
+.product-description {
+    margin: 1rem 0;
+}
+
+.product-price {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.btn:active {
+    transform: scale(0.95);
+}

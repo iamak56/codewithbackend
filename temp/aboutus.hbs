@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/aboutus.css">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <link rel="shortcut icon" href="./img and video/favicon.png" type="image/x-icon">
+    <title>About Us - Cyberpunk</title>
+</head>
+<body>
+    {{#if successMessage}}
+    <div id="popup" class="popup">
+        <div class="popup-content">
+            <p>{{successMessage}}</p>
+        </div>
+    </div>
+    {{/if}}
+
+    <header>
+        <a href="/home">
+            <img src="/logo.png" alt="Cyberpunk Logo">
+        </a>
+    </header>
+
+    <div class="about-container">
+        <div class="about-section">
+            <h1>About Cyberpunk</h1>
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>Who We Are</h2>
+                    <p>Cyberpunk is your premier destination for cutting-edge software solutions, gaming experiences, and professional tools. Founded with a vision to bridge the gap between creators and powerful software tools, we've become a leading e-commerce platform specializing in digital products.</p>
+                
+                    <h2>Our Mission</h2>
+                    <p>To empower creators, developers, and businesses by providing access to the best software tools and solutions in the market, all while ensuring a seamless and secure shopping experience.</p>
+
+                    <h2>What We Offer</h2>
+                    <div class="offerings">
+                        <div class="offering-item">
+                            <h3>Software Solutions</h3>
+                            <p>From Adobe Creative Suite to professional development tools, we offer a comprehensive range of software solutions for creative professionals.</p>
+                        </div>
+                        <div class="offering-item">
+                            <h3>Gaming</h3>
+                            <p>Access the latest games and gaming tools, perfect for both casual gamers and professional developers.</p>
+                        </div>
+                        <div class="offering-item">
+                            <h3>Growth Tools</h3>
+                            <p>Discover software solutions designed to help your business scale and succeed in the digital age.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="stats-section">
+            <div class="stat-item">
+                <h3>1000+</h3>
+                <p>Products</p>
+            </div>
+            <div class="stat-item">
+                <h3>50K+</h3>
+                <p>Happy Customers</p>
+            </div>
+            <div class="stat-item">
+                <h3>24/7</h3>
+                <p>Support</p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div id="row">
+            <div class="col">
+                <a href="/home">
+                    <img src="/logo.png" id="footerlogo" alt="Cyberpunk Logo">
+                </a>
+                <p>Your trusted source for professional software solutions, gaming experiences, and growth tools.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/cyberpunk.js"></script>
+    <script>
+        // Popup handling
+        const popup = document.getElementById('popup');
+        if (popup) {
+            setTimeout(() => {
+                popup.remove();
+            }, 3000);
+        }
+    </script>
+</body>
+</html>
